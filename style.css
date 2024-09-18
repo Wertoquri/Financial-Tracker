@@ -115,7 +115,7 @@ form button:hover {
 
 /* Transactions panel styling */
 #transactions-panel {
-    max-height: 190px; /* Adjust as needed */
+    max-height: 15vh; /* Adjust as needed */
     overflow-y: auto;
     margin: 20px auto;
     max-width: 400px;
