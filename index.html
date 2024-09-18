@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Financial Tracker</h1>
+
+
+        <form id="transaction-form">
+            <input type="text" id="description" placeholder="Description" required>
+            <input type="number" id="amount" placeholder="Amount" required>
+            <select id="type" required>
+                <option value="income">income</option>
+                <option value="expense">expense</option>
+            </select>
+            <button type="submit">Add Transaction</button>
+
+            <button id="clear-transactions" class="clear-btn">Clear</button>
+
+            <button id="currency-btn" class="currency-btn">Change Currency</button>
+
+
+            <div id="currency-panel" class="currency-panel">
+                <select id="currency-select">
+                    <option value="UAH" selected>UAH - Hryvnia</option>
+                    <option value="USD">USD - US Dollar</option>
+                    <option value="EUR">EUR - Euro</option>
+                </select>
+                <button id="apply-currency" class="apply-btn">Apply</button>
+            </div>
+
+        </form>
+
+
+        <h2>Balance: <span id="balance">0</span> </h2>
+        <ul id="transactions-list"></ul>
+
+
+        <canvas id="financial-chart"></canvas>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+                <!-- by Wertoquri -->
+</body>
+
+</html>
