@@ -1,141 +1,199 @@
+/* Basic styling */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
+    padding: 0;
+    background-color: #f7f9fc;
+    color: #333;
 }
 
-.container {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 400px;
+/* Header styling */
+h1 {
     text-align: center;
+    color: #333;
+    margin-top: 20px;
+    font-size: 2em;
 }
 
-input, select, button {
-    width: calc(100% - 20px);
+/* Form styling */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 400px;
+}
+
+form input, form select, form button {
     margin: 10px 0;
     padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-button {
+form button {
     background-color: #4CAF50;
     color: white;
     border: none;
     cursor: pointer;
 }
 
-button:hover {
+form button:hover {
     background-color: #45a049;
 }
 
-#balance {
-    font-size: 24px;
-    font-weight: bold;
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-li {
-    padding: 10px;
-    margin: 5px 0;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    display: flex;
-    justify-content: space-between;
-}
-
-canvas {
-    margin-top: 20px;
-}
-
-/* Стилі для кнопки очищення */
-.clear-btn {
-    background-color: #f44336;
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    width: calc(100% - 20px);
-    margin-top: 10px;
-    border-radius: 5px;
-}
-
-.clear-btn:hover {
-    background-color: #e53935;
-}
-
-/* Задаємо максимальну висоту списку транзакцій і робимо його прокручуваним */
-#transactions-list {
-    max-height: 200px;
-    overflow-y: auto;
-    margin-top: 10px;
-    padding: 0;
-    list-style-type: none;
-}
-
-#transactions-list li {
-    padding: 10px;
-    margin: 5px 0;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    display: flex;
-    justify-content: space-between;
-}
-
-/* Стилі для кнопки вибору валют */
+/* Currency panel styling */
 .currency-btn {
-    background-color: #2196F3;
+    background-color: #007BFF;
     color: white;
     border: none;
-    padding: 10px;
+    padding: 10px 20px;
     cursor: pointer;
-    width: calc(100% - 20px);
-    margin-top: 10px;
-    border-radius: 5px;
+    border-radius: 4px;
+    margin-top: 20px;
+    display: block;
+    text-align: center;
 }
 
 .currency-btn:hover {
-    background-color: #1976D2;
+    background-color: #0056b3;
 }
 
-/* Панель вибору валют (прихована за замовчуванням) */
 .currency-panel {
     display: none;
     background-color: #fff;
     padding: 20px;
     position: absolute;
     top: 100px;
-    right: 10px;
-    width: 200px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
+    right: 20px;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    z-index: 1000;
 }
 
-/* Стилі для кнопки "Застосувати" */
-.apply-btn {
-    background-color: #4CAF50;
-    color: white;
+.currency-panel select, .currency-panel button {
+    margin: 10px 0;
     padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: calc(100% - 22px); /* Adjust width to fit padding */
+}
+
+.apply-btn {
+    background-color: #28a745;
+    color: white;
     border: none;
     cursor: pointer;
-    margin-top: 10px;
+    border-radius: 4px;
+    padding: 10px;
     width: 100%;
-    border-radius: 5px;
 }
 
 .apply-btn:hover {
-    background-color: #45a049;
+    background-color: #218838;
+}
+
+/* Balance styling */
+#balance {
+    font-size: 1.5em;
+    margin: 20px auto;
+    text-align: center;
+    color: #333;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+}
+
+/* Transactions panel styling */
+#transactions-panel {
+    max-height: 190px; /* Adjust as needed */
+    overflow-y: auto;
+    margin: 20px auto;
+    max-width: 400px;
+}
+
+#transactions-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#transactions-list li {
+    background-color: #fff;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#transactions-list li span {
+    font-weight: bold;
+}
+
+/* Remove Edit button and style Delete button */
+button.delete-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+button.delete-btn:hover {
+    background-color: #c82333;
+}
+
+/* Clear Transactions button styling */
+.clear-btn {
+    background-color: #fff;
+    color: #dc3545;
+    border: 2px solid #dc3545;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    display: block;
+    width: 200px;
+    margin: 20px auto;
+}
+
+.clear-btn:hover {
+    background-color: #dc3545;
+    color: white;
+}
+
+/* Chart styling */
+#financial-chart {
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+/* Export button styling */
+.export-btn {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    display: block;
+    width: 200px;
+    margin: 20px auto;
+}
+
+.export-btn:hover {
+    background-color: #0056b3;
 }

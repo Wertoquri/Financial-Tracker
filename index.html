@@ -4,51 +4,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Financial Tracker</title>
+    <title>Finance Management App</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="container">
-        <h1>Financial Tracker</h1>
+    <h1>Finance Management App</h1>
+    <form id="transaction-form">
+        <input type="text" id="description" placeholder="Description" required>
+        <input type="number" id="amount" placeholder="Amount" step="0.01" required>
+        <select id="type">
+            <option value="income">Income</option>
+            <option value="expense">Expense</option>
+        </select>
+        <button type="submit">Add Transaction</button>
+        <!-- Button to open the currency selection panel -->
+        <button id="currency-btn" class="currency-btn">Select Currency</button>
+        <button id="clear-transactions" class="clear-btn">Clear Transactions</button>
+    </form>
 
 
-        <form id="transaction-form">
-            <input type="text" id="description" placeholder="Description" required>
-            <input type="number" id="amount" placeholder="Amount" required>
-            <select id="type" required>
-                <option value="income">income</option>
-                <option value="expense">expense</option>
-            </select>
-            <button type="submit">Add Transaction</button>
 
-            <button id="clear-transactions" class="clear-btn">Clear</button>
+    <!-- Currency selection panel -->
+    <div id="currency-panel" class="currency-panel">
+        <select id="currency-select">
+            <option value="UAH" selected>UAH - Hryvnia</option>
+            <option value="USD">USD - US Dollar</option>
+            <option value="EUR">EUR - Euro</option>
+            <!-- Add more currencies here -->
+        </select>
+        <button id="apply-currency" class="apply-btn">Apply</button>
 
-            <button id="currency-btn" class="currency-btn">Change Currency</button>
-
-
-            <div id="currency-panel" class="currency-panel">
-                <select id="currency-select">
-                    <option value="UAH" selected>UAH - Hryvnia</option>
-                    <option value="USD">USD - US Dollar</option>
-                    <option value="EUR">EUR - Euro</option>
-                </select>
-                <button id="apply-currency" class="apply-btn">Apply</button>
-            </div>
-
-        </form>
-
-
-        <h2>Balance: <span id="balance">0</span> </h2>
-        <ul id="transactions-list"></ul>
-
-
-        <canvas id="financial-chart"></canvas>
     </div>
 
+    <div id="balance">Balance: 0 UAH</div>
+
+    <!-- Scrollable transactions panel -->
+    <div id="transactions-panel">
+        <ul id="transactions-list"></ul>
+    </div>
+
+
+
+    <!-- Chart.js CDN -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <canvas id="financial-chart" width="400" height="200"></canvas>
+
+    <button id="export-btn" class="export-btn">Export to CSV</button>
+
     <script src="script.js"></script>
-                <!-- by Wertoquri -->
 </body>
 
 </html>
