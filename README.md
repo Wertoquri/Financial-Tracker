@@ -9,6 +9,7 @@ A simple JavaScript-based app that helps users manage their personal finances by
 - **Data Visualization**: View a breakdown of income and expenses using a dynamic pie chart created with **Chart.js**.
 - **Real-Time Balance Update**: Instantly view your updated balance as you add or remove transactions.
 - **Clear Transactions**: Reset all tracked transactions with the clear button.
+- **Export Financial Data**: Export your financial data to CSV files for easy sharing and reporting.
 
 ## Technologies Used
 
@@ -16,6 +17,7 @@ A simple JavaScript-based app that helps users manage their personal finances by
 - **JavaScript**: For handling application logic, including transaction tracking and balance calculation.
 - **Chart.js**: For visualizing financial data with pie charts.
 - **Responsive Design**: The app is designed to be user-friendly across different screen sizes.
+- **API**: For real-time currency conversion.
 
 ## Installation
 
